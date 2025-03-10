@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaFree</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+    <!-- Top Icon Menu -->
+    <div class="top-icons">
+        <button class="platform-btn active" data-platform="youtube">
+            <i class="fab fa-youtube"></i> YouTube
+        </button>
+        <button class="platform-btn" data-platform="facebook">
+            <i class="fab fa-facebook"></i> Facebook
+        </button>
+        <button class="platform-btn" data-platform="soundcloud">
+            <i class="fab fa-soundcloud"></i> SoundCloud
+        </button>
+        <button class="platform-btn" data-platform="tiktok">
+            <i class="fab fa-tiktok"></i> TikTok
+        </button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1 class="title">Media Downloader <span id="format-name">MP3</span></h1>
+        <p>Convert and Download Media for Free</p>
+        <div class="input-container">
+            <span id="platform-icon" class="fab fa-youtube input-icon"></span>
+            <input type="text" id="url-input" placeholder="Enter URL here...">
+            <button id="convert-btn">Convert</button>
+        </div>
+
+        <select id="format-select">
+            <option value="mp3">MP3 (Audio)</option>
+            <option value="mp4-360">MP4 - 360p</option>
+            <option value="mp4-720">MP4 - 720p</option>
+            <option value="mp4-1080">MP4 - 1080p</option>
+        </select>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
