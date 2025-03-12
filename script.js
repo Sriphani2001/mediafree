@@ -5,12 +5,12 @@ const formatName = document.getElementById('format-name');
 
 const platformIcons = {
     youtube: { icon: 'fab fa-youtube', color: '#ff0000', placeholder: 'Enter YouTube URL...' },
-    facebook: { icon: 'fab fa-facebook', color: '#1877f2', placeholder: 'Enter Facebook Video URL...' },
+    facebook: { icon: 'fab fa-facebook', color: '#1877f2', placeholder: 'Enter Facebook URL...' },
     soundcloud: { icon: 'fab fa-soundcloud', color: '#ff5500', placeholder: 'Enter SoundCloud URL...' },
     tiktok: { icon: 'fab fa-tiktok', color: '#ffffff', placeholder: 'Enter TikTok URL...' }
 };
 
-// Set active platform
+// Update platform icon & placeholder based on selection
 platformButtons.forEach(button => {
     button.addEventListener('click', () => {
         document.querySelector('.platform-btn.active').classList.remove('active');
@@ -20,29 +20,28 @@ platformButtons.forEach(button => {
         platformIcon.className = platformIcons[platform].icon + ' input-icon';
         platformIcon.style.color = platformIcons[platform].color;
         urlInput.placeholder = platformIcons[platform].placeholder;
-
-        formatName.textContent = document.getElementById('format-select').value.toUpperCase();
     });
 });
 
-// Format select updates title
-document.getElementById('format-select').addEventListener('change', (e) => {
-    formatName.textContent = e.target.value.toUpperCase();
+// Update the format name in title dynamically
+topFormatSelect.addEventListener('change', () => {
+    const selectedOption = topFormatSelect.options[topFormatSelect.selectedIndex].text;
+    formatName.textContent = selectedOption.split('-')[0].trim();
 });
 
-// Convert button functionality (backend integration placeholder)
+// Conversion button event (placeholder for backend integration)
 document.getElementById('convert-btn').addEventListener('click', () => {
     const url = urlInput.value;
     const platform = document.querySelector('.platform-btn.active').getAttribute('data-platform');
-    const format = document.getElementById('format-select').value;
+    const selectedFormat = topFormatSelect.value;
 
-    if (!url) {
-        alert('Please enter a valid URL.');
+    if (!url || !selectedFormat) {
+        alert('Please enter a URL and select a format from the top-right menu.');
         return;
     }
 
-    alert(`Platform: ${platform}\nURL: ${url}\nFormat: ${format}`);
-    // Here, add backend integration later
+    alert(`Platform: ${platform}\nURL: ${url}\nFormat: ${selectedFormat}`);
+    // Backend API call goes here.
 });
 document.getElementById('convert-btn').addEventListener('click', () => {
     const url = urlInput.value;
@@ -53,7 +52,7 @@ document.getElementById('convert-btn').addEventListener('click', () => {
         return;
     }
 
-    fetch('http://127.0.0.1:5050/download', {
+    fetch('http://127.0.0.1:5000/download', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({url, format})

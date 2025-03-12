@@ -10,7 +10,25 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <!-- Top Icon Menu -->
+
+    <!-- Top Menu for Format Selection -->
+    <div class="top-format-menu">
+        <select id="top-format-select">
+            <option disabled selected>Select Format & Quality</option>
+            <optgroup label="🎵 MP3 Audio">
+                <option value="mp3-128">MP3 - 128 kbps</option>
+                <option value="mp3-192">MP3 - 192 kbps</option>
+                <option value="mp3-320">MP3 - 320 kbps</option>
+            </optgroup>
+            <optgroup label="🎬 MP4 Video">
+                <option value="mp4-360">MP4 - 360p</option>
+                <option value="mp4-720">MP4 - 720p (HD)</option>
+                <option value="mp4-1080">MP4 - 1080p (Full HD)</option>
+            </optgroup>
+        </select>
+    </div>
+
+    <!-- Platform Icons -->
     <div class="top-icons">
         <button class="platform-btn active" data-platform="youtube">
             <i class="fab fa-youtube"></i> YouTube
@@ -28,20 +46,13 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <h1 class="title">Media Downloader <span id="format-name">MP3</span></h1>
+        <h1 class="title">Media Converter and Downloader <span id="format-name">MP3</span></h1>
         <p>Convert and Download Media for Free</p>
         <div class="input-container">
             <span id="platform-icon" class="fab fa-youtube input-icon"></span>
             <input type="text" id="url-input" placeholder="Enter URL here...">
             <button id="convert-btn">Convert</button>
         </div>
-
-        <select id="format-select">
-            <option value="mp3">MP3 (Audio)</option>
-            <option value="mp4-360">MP4 - 360p</option>
-            <option value="mp4-720">MP4 - 720p</option>
-            <option value="mp4-1080">MP4 - 1080p</option>
-        </select>
     </div>
 
 <script src="script.js"></script>
