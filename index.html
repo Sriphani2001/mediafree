@@ -1,60 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediaFree</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>MediaFree</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Fonts & Icons -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
+  <!-- Header / Hamburger Menu Icon -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
 
-    <!-- Top Menu for Format Selection -->
-    <div class="top-format-menu">
-        <select id="top-format-select">
-            <option disabled selected>Select Format & Quality</option>
-            <optgroup label="🎵 MP3 Audio">
-                <option value="mp3-128">MP3 - 128 kbps</option>
-                <option value="mp3-192">MP3 - 192 kbps</option>
-                <option value="mp3-320">MP3 - 320 kbps</option>
-            </optgroup>
-            <optgroup label="🎬 MP4 Video">
-                <option value="mp4-360">MP4 - 360p</option>
-                <option value="mp4-720">MP4 - 720p (HD)</option>
-                <option value="mp4-1080">MP4 - 1080p (Full HD)</option>
-            </optgroup>
-        </select>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleMenu()">
+      <i class="fas fa-arrow-left"></i> Close menu
+    </button>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Download History</a></li>
+      <li><a href="#">Sign In</a></li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1 class="title">Media Converter and Downloader <span id="format-name">MP3</span></h1>
+    <p>Convert and Download Media for Free</p>
+
+    <!-- URL + Convert Button -->
+    <div class="input-container">
+      <span id="platform-icon" class="fab fa-youtube input-icon"></span>
+      <input type="text" id="url-input" placeholder="Enter YouTube URL..." />
+      <button id="convert-btn">Convert</button>
     </div>
 
-    <!-- Platform Icons -->
-    <div class="top-icons">
-        <button class="platform-btn active" data-platform="youtube">
-            <i class="fab fa-youtube"></i> YouTube
-        </button>
-        <button class="platform-btn" data-platform="facebook">
-            <i class="fab fa-facebook"></i> Facebook
-        </button>
-        <button class="platform-btn" data-platform="soundcloud">
-            <i class="fab fa-soundcloud"></i> SoundCloud
-        </button>
-        <button class="platform-btn" data-platform="tiktok">
-            <i class="fab fa-tiktok"></i> TikTok
-        </button>
+    <!-- Platform Select BELOW the URL input -->
+    <div class="platform-select-container">
+      <select id="platform-select">
+        <option value="youtube" selected>YouTube</option>
+        <option value="facebook">Facebook</option>
+        <option value="soundcloud">SoundCloud</option>
+        <option value="tiktok">TikTok</option>
+      </select>
     </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <h1 class="title">Media Converter and Downloader <span id="format-name">MP3</span></h1>
-        <p>Convert and Download Media for Free</p>
-        <div class="input-container">
-            <span id="platform-icon" class="fab fa-youtube input-icon"></span>
-            <input type="text" id="url-input" placeholder="Enter URL here...">
-            <button id="convert-btn">Convert</button>
-        </div>
-    </div>
+    <!-- Format Select -->
+    <select id="format-select">
+      <optgroup label="Audio (MP3)">
+        <option value="mp3-128">MP3 - 128 kbps</option>
+        <option value="mp3-192">MP3 - 192 kbps</option>
+        <option value="mp3-320">MP3 - 320 kbps</option>
+      </optgroup>
+      <optgroup label="Video (MP4)">
+        <option value="mp4-360">MP4 - 360p</option>
+        <option value="mp4-720">MP4 - 720p</option>
+        <option value="mp4-1080">MP4 - 1080p</option>
+      </optgroup>
+    </select>
+  </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
