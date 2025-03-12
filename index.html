@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
@@ -9,15 +8,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-
 <body>
 
   <!-- Central Top Navigation -->
   <nav class="top-nav">
     <ul>
-      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="#"><i class="fas fa-history"></i> Download History</a></li>
-      <li><a href="#"><i class="fas fa-user"></i> Sign In / Sign Up</a></li>
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="error404.html" class="nav-link"><i class="fas fa-history"></i> Download History</a></li>
+      <li><a href="error404.html" class="nav-link"><i class="fas fa-user"></i> Sign In / Sign Up</a></li>
     </ul>
   </nav>
 
@@ -34,11 +32,13 @@
 
     <!-- Transparent Platform Selector -->
     <select id="platform-select" class="transparent-select">
-      <option value="youtube" selected>YouTube</option>
-      <option value="facebook">Facebook</option>
-      <option value="soundcloud">SoundCloud</option>
-      <option value="tiktok">TikTok</option>
-    </select>
+        <option value="youtube" selected>YouTube</option>
+        <option value="facebook">Facebook</option>
+        <option value="soundcloud">SoundCloud</option>
+        <option value="tiktok">TikTok</option>
+        <option value="instagram">Instagram</option>
+        <option value="twitter">Twitter</option>
+      </select>
 
     <!-- Transparent Format Selector -->
     <select id="format-select" class="transparent-select">
@@ -53,10 +53,8 @@
         <option value="mp4-1080">MP4 - 1080p</option>
       </optgroup>
     </select>
-
   </div>
 
   <script src="script.js"></script>
 </body>
-
 </html>
