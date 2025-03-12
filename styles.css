@@ -1,3 +1,4 @@
+/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
@@ -12,86 +13,50 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    backdrop-filter: brightness(0.6);
     color: #ffffff;
   }
   
-  /* Header */
-  header {
-    position: relative;
+  /* Top Navigation Centered */
+  .top-nav {
     width: 100%;
-    height: 60px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
   }
   
-  /* Hamburger Icon */
-  .menu-icon {
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    color: #ffffff;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 999;
+  .top-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
   }
   
-  /* Sidebar Menu */
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hidden off-screen by default */
-    width: 250px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    padding: 20px;
-    transition: left 0.4s ease; /* Smooth transition */
-    z-index: 998;
-    overflow-y: auto;
-  }
-  
-  .sidebar.open {
-    left: 0; /* Slide in from the left */
-  }
-  
-  /* Close button in Sidebar */
-  .close-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: none;
-    border: none;
+  .top-nav ul li a {
+    text-decoration: none;
     color: #fff;
     font-size: 1rem;
-    margin-bottom: 20px;
-    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
   }
   
-  .sidebar ul {
-    list-style: none;
-    margin-top: 20px;
+  .top-nav ul li a:hover {
+    color: #c8c8c8;
   }
   
-  .sidebar ul li a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin: 12px 0;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  .top-nav ul li a i {
+    margin-right: 8px;
   }
   
-  .sidebar ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-  
-  /* Main Content */
+  /* Main content styling */
   .main-content {
+    height: calc(100vh - 60px);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: calc(100% - 60px); /* account for header height */
     text-align: center;
-    padding: 0 20px;
   }
   
   .title {
@@ -100,18 +65,15 @@
   }
   
   .title span {
-    color: #f7d5d5; /* highlight "MP3" */
+    color: #f7d5d5;
   }
   
   .input-container {
-    width: 80%;
-    max-width: 600px;
     display: flex;
-    align-items: center;
     background-color: #fff;
-    border-radius: 8px;
-    margin-top: 20px;
     padding: 5px;
+    border-radius: 10px;
+    margin: 15px 0;
   }
   
   .input-icon {
@@ -123,49 +85,43 @@
   #url-input {
     flex-grow: 1;
     border: none;
+    padding: 10px;
     outline: none;
     font-size: 1rem;
-    padding: 10px;
   }
   
   #convert-btn {
     background-color: #114c73;
-    color: white;
+    color: #fff;
     border: none;
-    border-radius: 5px;
     padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
   }
   
   #convert-btn:hover {
     background-color: #553c76;
   }
   
-  #format-select {
+  /* Transparent Selectors */
+  .transparent-select {
     margin-top: 15px;
     padding: 10px;
     border-radius: 5px;
-    border: none;
-    outline: none;
+    border: 2px solid rgba(255,255,255,0.6);
     font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    outline: none;
   }
   
-  /* Platform Select Container */
+  .transparent-select option {
+    color: #000; /* options clearly readable */
+  }
+  
   .platform-select-container {
     margin-top: 20px;
-  }
-  
-  #platform-select {
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  #platform-select:focus {
-    outline: none;
   }
   

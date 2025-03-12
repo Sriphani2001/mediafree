@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>MediaFree</title>
   <link rel="stylesheet" href="styles.css" />
-  <!-- Fonts & Icons -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
-<body>
-  <!-- Header / Hamburger Menu Icon -->
-  <header>
-    <div class="menu-icon" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </div>
-  </header>
 
-  <!-- Sidebar Navigation -->
-  <nav class="sidebar" id="sidebar">
-    <button class="close-btn" onclick="toggleMenu()">
-      <i class="fas fa-arrow-left"></i> Close menu
-    </button>
+<body>
+
+  <!-- Central Top Navigation -->
+  <nav class="top-nav">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Download History</a></li>
-      <li><a href="#">Sign In</a></li>
-      <li><a href="#">Sign Up</a></li>
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-history"></i> Download History</a></li>
+      <li><a href="#"><i class="fas fa-user"></i> Sign In / Sign Up</a></li>
     </ul>
   </nav>
 
@@ -38,25 +26,22 @@
     <h1 class="title">Media Converter and Downloader <span id="format-name">MP3</span></h1>
     <p>Convert and Download Media for Free</p>
 
-    <!-- URL + Convert Button -->
     <div class="input-container">
       <span id="platform-icon" class="fab fa-youtube input-icon"></span>
       <input type="text" id="url-input" placeholder="Enter YouTube URL..." />
       <button id="convert-btn">Convert</button>
     </div>
 
-    <!-- Platform Select BELOW the URL input -->
-    <div class="platform-select-container">
-      <select id="platform-select">
-        <option value="youtube" selected>YouTube</option>
-        <option value="facebook">Facebook</option>
-        <option value="soundcloud">SoundCloud</option>
-        <option value="tiktok">TikTok</option>
-      </select>
-    </div>
+    <!-- Transparent Platform Selector -->
+    <select id="platform-select" class="transparent-select">
+      <option value="youtube" selected>YouTube</option>
+      <option value="facebook">Facebook</option>
+      <option value="soundcloud">SoundCloud</option>
+      <option value="tiktok">TikTok</option>
+    </select>
 
-    <!-- Format Select -->
-    <select id="format-select">
+    <!-- Transparent Format Selector -->
+    <select id="format-select" class="transparent-select">
       <optgroup label="Audio (MP3)">
         <option value="mp3-128">MP3 - 128 kbps</option>
         <option value="mp3-192">MP3 - 192 kbps</option>
@@ -68,8 +53,10 @@
         <option value="mp4-1080">MP4 - 1080p</option>
       </optgroup>
     </select>
+
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
