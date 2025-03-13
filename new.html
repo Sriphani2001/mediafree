@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>MediaFree</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body,
+    html {
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+      background-image: url("3430013.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #ffffff;
+    }
+
+    /* Top Navigation Centered */
+    .top-nav {
+      width: 100%;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .top-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .top-nav ul li {
+      margin-right: 30px;
+    }
+
+    /* Push the sign in/up link to the right */
+    .top-nav ul li.right {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    .top-nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s;
+      padding: 8px 12px;
+      border-radius: 5px;
+    }
+
+    .top-nav ul li a:hover {
+      color: #c8c8c8;
+    }
+
+    .top-nav ul li a i {
+      margin-right: 8px;
+    }
+
+    /* Active Navigation Link */
+    .top-nav ul li a.active {
+      background-color: black;
+    }
+
+    /* Main content styling */
+    .main-content {
+      height: calc(100vh - 60px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .title span {
+      color: #f7d5d5;
+    }
+
+    .input-container {
+      display: flex;
+      background-color: #fff;
+      padding: 5px;
+      border-radius: 10px;
+      margin: 15px 0;
+    }
+
+    .input-icon {
+      font-size: 1.5rem;
+      color: #ff0000;
+      margin: 0 10px;
+    }
+
+    #url-input {
+      flex-grow: 1;
+      border: none;
+      padding: 10px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    #convert-btn {
+      background-color: #114c73;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #convert-btn:hover {
+      background-color: #553c76;
+    }
+
+    /* Transparent Selectors */
+    .transparent-select {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 2px solid rgba(218, 212, 212, 0.6);
+      font-size: 1rem;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #9cd0e5;
+      backdrop-filter: blur(5px);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .transparent-select option {
+      color: #000; /* options clearly readable */
+    }
+
+    /* Additional Sections Styling */
+    .section {
+      padding: 40px 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    .section p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Central Top Navigation -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="error404.html" class="nav-link"><i class="fas fa-history"></i> History</a></li>
+      <li><a href="#terms" class="nav-link">Terms and Conditions</a></li>
+      <li><a href="#about" class="nav-link">About Us</a></li>
+      <li class="right"><a href="error404.html" class="nav-link"><i class="fas fa-user"></i> Sign In / Sign Up</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1 class="title">Media Converter and Downloader <span id="format-name">MP3</span></h1>
+    <p>Convert and Download Media for Free</p>
+
+    <div class="input-container">
+      <span id="platform-icon" class="fab fa-youtube input-icon"></span>
+      <input type="text" id="url-input" placeholder="Enter YouTube URL..." />
+      <button id="convert-btn">Convert</button>
+    </div>
+
+    <!-- Transparent Platform Selector -->
+    <select id="platform-select" class="transparent-select">
+      <option value="youtube" selected>YouTube</option>
+      <option value="facebook">Facebook</option>
+      <option value="soundcloud">SoundCloud</option>
+      <option value="tiktok">TikTok</option>
+      <option value="instagram">Instagram</option>
+      <option value="twitter">Twitter</option>
+    </select>
+
+    <!-- Transparent Format Selector -->
+    <select id="format-select" class="transparent-select">
+      <optgroup label="🎵 MP3 Audio">
+        <option value="mp3-128">MP3 - 128 kbps</option>
+        <option value="mp3-192">MP3 - 192 kbps</option>
+        <option value="mp3-320">MP3 - 320 kbps</option>
+      </optgroup>
+      <optgroup label="🎬 MP4 Video">
+        <option value="mp4-360">MP4 - 360p</option>
+        <option value="mp4-720">MP4 - 720p</option>
+        <option value="mp4-1080">MP4 - 1080p</option>
+      </optgroup>
+    </select>
+  </div>
+
+  <!-- Additional Sections -->
+  <section id="terms" class="section">
+    <h2>Terms and Conditions</h2>
+    <p>This is a sample Terms and Conditions section. You can update this text to include your site's policies and usage guidelines.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Us</h2>
+    <p>This is a sample About Us section. Here, you can include information about your team, your mission, or your company’s story.</p>
+  </section>
+
+  <script>
+    // Platform and Format Handling Code
+    const platformSelect = document.getElementById("platform-select");
+    const platformIcon = document.getElementById("platform-icon");
+    const urlInput = document.getElementById("url-input");
+    const formatName = document.getElementById("format-name");
+
+    const platformDetails = {
+      youtube: { icon: "fab fa-youtube", color: "#ff0000", placeholder: "Enter YouTube URL..." },
+      facebook: { icon: "fab fa-facebook", color: "#1877f2", placeholder: "Enter Facebook URL..." },
+      soundcloud: { icon: "fab fa-soundcloud", color: "#ff5500", placeholder: "Enter SoundCloud URL..." },
+      tiktok: { icon: "fab fa-tiktok", color: "#ffffff", placeholder: "Enter TikTok URL..." },
+      instagram: { icon: "fab fa-instagram", color: "#C13584", placeholder: "Enter Instagram URL..." },
+      twitter: { icon: "fab fa-twitter", color: "#1DA1F2", placeholder: "Enter Twitter URL..." }
+    };
+
+    platformSelect.addEventListener("change", () => {
+      const details = platformDetails[platformSelect.value];
+      platformIcon.className = details.icon + " input-icon";
+      urlInput.placeholder = details.placeholder;
+    });
+
+    document.getElementById("format-select").addEventListener("change", (e) => {
+      formatName.textContent = e.target.value.split("-")[0].toUpperCase();
+    });
+
+    // Convert button event listener (alert-based)
+    document.getElementById("convert-btn").addEventListener("click", () => {
+      const url = urlInput.value.trim();
+      const format = document.getElementById("format-select").value;
+      if (!url) {
+        alert("Enter a URL.");
+        return;
+      }
+      alert(`Processing:\nURL: ${url}\nFormat: ${format}`);
+    });
+
+    // Navigation Active State Handling
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // Remove active class from all links
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        // Add active class to the clicked link
+        this.classList.add('active');
+        // If the link is not "Home", prevent default navigation and simulate an error 404 (for demo purposes)
+        if (this.getAttribute('href') !== 'index.html' && this.getAttribute('href').charAt(0) !== '#') {
+          e.preventDefault();
+          alert('Error 404: Page not found');
+        }
+      });
+    });
+
+    // Convert button event listener for the download fetch call
+    document.getElementById("convert-btn").addEventListener("click", () => {
+      const url = urlInput.value.trim();
+      const format = document.getElementById("format-select").value;
+      const platform = platformSelect.value;
+
+      if (!url) {
+        alert("Enter a URL.");
+        return;
+      }
+
+      fetch('http://127.0.0.1:5000/download', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ url: url, format: format, platform: platform })
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.blob();
+        } else {
+          return response.json().then(err => { throw err; });
+        }
+      })
+      .then(blob => {
+        // Create a temporary link element and trigger download
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = downloadUrl;
+        a.download = "";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      })
+      .catch(error => {
+        alert("Error: " + (error.error || "An error occurred during download."));
+      });
+    });
+  </script>
+</body>
+</html>
