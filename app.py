@@ -67,4 +67,14 @@ def download():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Ask the user for the IP address and port
+    ip_address = input("Enter the IP address to bind (default 127.0.0.1): ") or "127.0.0.1"
+    port_input = input("Enter the port number to bind (default 5000): ") or "5000"
+    
+    try:
+        port = int(port_input)
+    except ValueError:
+        print("Invalid port number. Using default port 5000.")
+        port = 5000
+
+    app.run(host=ip_address, port=port, debug=True)
